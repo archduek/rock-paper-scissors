@@ -14,3 +14,16 @@ function getComputerChoice() {
         return "Paper";
     }
 }
+
+const playerSelection = prompt("Rock, Paper, Scissors?")
+const computerSelection = getComputerChoice();
+
+function playRound (playerSelection, computerSelection) {
+    if (playerSelection == "Rock" && computerSelection == "Paper") {
+        return "Human wins";
+    } else {
+        return "Computer wins";
+    }
+}
+
+console.log(playRound());
