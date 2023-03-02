@@ -9,17 +9,50 @@ function getComputerChoice() {
     if (choice === 1) {
         return "Rock";
     } else if (choice === 2) {
-        return "Scissors";
-    } else if (choice === 3) {
         return "Paper";
+    } else if (choice === 3) {
+        return "Scissors";
     }
 }
 
 const computerChoice = getComputerChoice();
 const playerChoice = prompt("Rock, Paper, Scissors?");
 
-function playRound(playerChoice, computerChoice) {
-    for (let i = 0; i < 5; i++) {
-        
+function rules(playerChoice, computerChoice) {
+    
+    if (playerChoice == computerChoice) {
+        return "Draw";
+    }
+    else if (playerChoice == "Rock") {
+        if (computerChoice == "Scissors") {
+            return "Human wins";
+        } else {
+            return "Computer wins";
+        }
+    } else if (playerChoice == "Paper") {
+        if (computerChoice == "Rock") {
+            return "Human wins";
+        } else {
+            return "Computer wins";
+        }
+    } else if (playerChoice == "Scissors") {
+        if (computerChoice == "Paper") {
+            return "Human wins";
+        } else {
+            return "Computer wins";
+        }
     }
 }
+
+function playRound() {
+    for (let i = 0; i < 5; i++);
+    rules();
+}
+
+function game() {
+    playRound();
+}
+
+// rock > scissors
+// paper > rock 
+// scissors > paper 
