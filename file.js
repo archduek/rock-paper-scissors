@@ -20,10 +20,7 @@ const playerChoice = prompt("Rock, Paper, Scissors?");
 
 function rules(playerChoice, computerChoice) {
     
-    if (playerChoice == computerChoice) {
-        return "Draw";
-    }
-    else if (playerChoice == "Rock") {
+    if (playerChoice == "Rock") {
         if (computerChoice == "Scissors") {
             return "Human wins";
         } else {
@@ -42,6 +39,7 @@ function rules(playerChoice, computerChoice) {
             return "Computer wins";
         }
     }
+    
 }
 
 function playRound() {
