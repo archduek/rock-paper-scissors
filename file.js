@@ -15,20 +15,42 @@ function getComputerChoice() {
     }
 }
 
-let computerChoice = getComputerChoice();
-let playerChoice = "Rock";
-
-function rules(playerChoice, computerChoice) {
-    return playerChoice == computerChoice;
+function getPlayerChoice() {
+    let choice = String(prompt("Rock, Paper, Scissors?"));
+    return (choice.charAt(0).toUpperCase() + choice.substring(1).toLowerCase());
 }
 
-function playRound() {
-    for (let i = 0; i < 5; i++);
-    rules();
+const computerChoice = getComputerChoice();
+const playerChoice = getPlayerChoice();
+
+function playRound(computerChoice, playerChoice) {
+    if (computerChoice == "Rock") {
+        if (playerChoice == "Scissors") {
+            return "Computer wins";
+        } else {
+            return "Human wins";
+        }
+    } else if (computerChoice == "Paper") {
+        if (playerChoice == "Rock") {
+            return "Computer wins";
+        } else {
+            return "Human wins";
+        }
+    } else if (computerChoice == "Scissors") {
+        if (playerChoice == "Paper") {
+            return "Computer wins";
+        } else {
+            return "Human wins";
+        }
+    } else {
+        return "Draw";
+    }
 }
 
 function game() {
-    playRound();
+    for (let i = 0; i < 5; i++) {
+        return playRound(computerChoice, playerChoice);
+    }
 }
 
 // rock > scissors
