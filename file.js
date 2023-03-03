@@ -4,6 +4,11 @@
 // The choices will be evaluated by a function, which will produce an alert 
 // The alert will let the players know who won the game 
 
+// Rules
+// rock > scissors
+// paper > rock 
+// scissors > paper 
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 4) + 1;
     if (choice === 1) {
@@ -24,7 +29,10 @@ const computerChoice = getComputerChoice();
 const playerChoice = getPlayerChoice();
 
 function playRound(computerChoice, playerChoice) {
-    if (computerChoice == "Rock") {
+    if (computerChoice == playerChoice) {
+        return "Draw";
+    }
+    else if (computerChoice == "Rock") {
         if (playerChoice == "Scissors") {
             return "Computer wins";
         } else {
@@ -42,17 +50,11 @@ function playRound(computerChoice, playerChoice) {
         } else {
             return "Human wins";
         }
-    } else {
-        return "Draw";
-    }
+    } 
 }
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        return playRound(computerChoice, playerChoice);
-    }
+        console.log(playRound(computerChoice, playerChoice));
+    } 
 }
-
-// rock > scissors
-// paper > rock 
-// scissors > paper 
