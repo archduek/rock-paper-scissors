@@ -15,31 +15,11 @@ function getComputerChoice() {
     }
 }
 
-const computerChoice = getComputerChoice();
-const playerChoice = prompt("Rock, Paper, Scissors?");
+let computerChoice = getComputerChoice();
+let playerChoice = "Rock";
 
 function rules(playerChoice, computerChoice) {
-    
-    if (playerChoice == "Rock") {
-        if (computerChoice == "Scissors") {
-            return "Human wins";
-        } else {
-            return "Computer wins";
-        }
-    } else if (playerChoice == "Paper") {
-        if (computerChoice == "Rock") {
-            return "Human wins";
-        } else {
-            return "Computer wins";
-        }
-    } else if (playerChoice == "Scissors") {
-        if (computerChoice == "Paper") {
-            return "Human wins";
-        } else {
-            return "Computer wins";
-        }
-    }
-    
+    return playerChoice == computerChoice;
 }
 
 function playRound() {
