@@ -20,14 +20,7 @@ function getComputerChoice() {
     }
 }
 
-// function getPlayerChoice() {
-//     let choice = String(prompt("Rock, Paper, Scissors?"));
-//     return (choice.charAt(0).toUpperCase() + choice.substring(1).toLowerCase());
-// }
-
 let computerChoice = getComputerChoice();
-let input = String(prompt("Rock, Paper, Scissors?"));
-let playerChoice = (input.charAt(0).toUpperCase() + input.substring(1).toLowerCase());
 
 function playRound(computerChoice, playerChoice) {
     if (computerChoice == playerChoice) {
@@ -56,6 +49,13 @@ function playRound(computerChoice, playerChoice) {
 
 function game() {
     for (let i = 0; i < 5; i++) { 
+        let playerInput = String(prompt("Rock, Paper, Scissors?"));
+        let playerChoice = (playerInput.charAt(0).toUpperCase() + playerInput.substring(1).toLowerCase());
+        getComputerChoice;
         console.log(playRound(computerChoice, playerChoice));
     } 
 }
+
+
+
+console.log(game());
