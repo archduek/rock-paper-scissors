@@ -49,22 +49,26 @@ function playRound(computerChoice, playerChoice) {
 
 function game() {
     for (let i = 0; i < 5; i++) { 
-        let computerScore = 0;
-        let playerScore = 0;
         let playerInput = String(prompt("Rock, Paper, Scissors?"));
         let playerChoice = (playerInput.charAt(0).toUpperCase() + playerInput.substring(1).toLowerCase());
         getComputerChoice;
         console.log(playRound(computerChoice, playerChoice));
-
-        if (playRound == "Computer wins") {
-            return computerScore += 1;
-        } else if (playRound == "Human wins") {
-            return playerScore += 1;
-        } 
-        console.log(`Player Score: ${playerScore}, Computer Score ${computerScore}`);
+        
+        score;
     } 
 }
 
+function score() {
+    let playerScore = 0;
+    let computerScore = 0;
 
+    if (game == "Human wins") {
+        playerScore++;
+    } else if (game == "Computer wins") {
+        computerScore++;
+    }
+
+    console.log(`Player Score: ${playerScore}, Computer Score ${computerScore}`);
+}
 
 console.log(game());
