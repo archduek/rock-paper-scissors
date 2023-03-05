@@ -11,6 +11,9 @@
 
 playOptions = [0, 1, 2];
 
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(items) {
     let choice = items[Math.floor(Math.random()*items.length)];
     if (choice === 0) {
@@ -23,27 +26,34 @@ function getComputerChoice(items) {
 }
 
 function playRound(computerChoice, playerChoice) {
+
     if (computerChoice == playerChoice) {
         return "Draw";
     } else if (computerChoice == "Rock") {
         if (playerChoice == "Scissors") {
+            computerScore+=1;
             return "Computer wins";
         } else {
+            playerScore+=1;
             return "Player wins";
         }
     } else if (computerChoice == "Paper") {
         if (playerChoice == "Rock") {
+            computerScore+=1;
             return "Computer wins";
         } else {
+            playerScore+=1;
             return "Human wins";
         }
     } else if (computerChoice == "Scissors") {
         if (playerChoice == "Paper") {
+            computerScore+=1;
             return "Computer wins";
         } else {
+            playerScore+=1;
             return "Player wins";
         }
-    }
+    } 
 }
 
 function game() {
@@ -59,16 +69,5 @@ function series() {
     }
 }
 
-function score() {
-    let playerScore = 0;
-    let computerScore = 0;
-
-    if (game == "Computer wins") {
-        computerScore++;
-    } else if (game == "Player wins") {
-        playerScore++;
-    } return `P: ${playerScore}, C: ${computerScore}`;
-}
-
-console.log(game());
-console.log(score());
+console.log(series());
+console.log(`Player score: ${playerScore} vs. Computer score: ${computerScore}`);
