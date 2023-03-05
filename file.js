@@ -47,12 +47,28 @@ function playRound(computerChoice, playerChoice) {
 }
 
 function game() {
+    let input = String(prompt("Rock, Paper, Scissors?"));
+    let playerChoice = input.charAt(0).toUpperCase() + input.substring(1).toLowerCase();
+    let computerChoice = getComputerChoice(playOptions);
+    return playRound(computerChoice, playerChoice);
+}
+
+function series() {
     for (let i = 0; i < 5; i++) {
-        let input = String(prompt("Rock, Paper, Scissors?"));
-        let playerChoice = input.charAt(0).toUpperCase() + input.substring(1).toLowerCase();
-        let computerChoice = getComputerChoice(playOptions);
-        console.log(playRound(computerChoice, playerChoice));
+        console.log(game());
     }
 }
 
+function score() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    if (game == "Computer wins") {
+        computerScore++;
+    } else if (game == "Player wins") {
+        playerScore++;
+    } return `P: ${playerScore}, C: ${computerScore}`;
+}
+
 console.log(game());
+console.log(score());
